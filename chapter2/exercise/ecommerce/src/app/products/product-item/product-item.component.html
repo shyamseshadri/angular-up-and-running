@@ -1,4 +1,4 @@
-<div class="product-item">
+<div class="product-item" [class]="product.isOnSale ? 'product-item sale' : ''">
   <div class="image"><img [src]="product.imageUrl"></div>
   <div class="details">
     <div>{{product.name}}</div>
