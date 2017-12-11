@@ -1,0 +1,15 @@
+<h2>Create Stock Form</h2>
+
+<div class="form-group">
+  <form>
+    <div class="stock-name">
+      <input type="text"
+             placeholder="Stock Name"
+
+             (input)="stock.name=$event.target.value">
+    </div>
+  </form>
+  <button (click)="stock.name='test'">Reset stock name</button>
+</div>
+
+<h4>Stock Name is {{stock.name}}</h4>
