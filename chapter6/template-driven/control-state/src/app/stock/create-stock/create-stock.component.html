@@ -2,11 +2,18 @@
 
 <div class="form-group">
   <form (ngSubmit)="createStock()">
+    <div>
+      The following element changes from green to red when it is invalid
+    </div>
     <div class="stock-name">
       <input type="text"
              placeholder="Stock Name"
+             required
              name="stockName"
              [(ngModel)]="stock.name">
+    </div>
+    <div>
+      The following element changes from green to red when it has been modified
     </div>
     <div class="stock-code">
       <input type="text"
@@ -14,6 +21,9 @@
              name="stockCode"
              [(ngModel)]="stock.code">
     </div>
+    <div>
+        The following element changes from green to red when it is visited by the user, regardless of change
+      </div>
     <div class="stock-price">
       <input type="number"
              placeholder="Stock Price"
