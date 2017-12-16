@@ -10,9 +10,7 @@
              #stockName="ngModel"
              [(ngModel)]="stock.name">
     </div>
-    <div *ngIf="stockName.dirty && stockName.invalid">
-      <div *ngIf="stockName.errors.required">Stock Name is Mandatory</div>
-    </div>
+    <div *ngIf="stockName.errors && stockName.errors.required">Stock Name is Mandatory</div>
     <div class="stock-code">
       <input type="text"
              placeholder="Stock Code"

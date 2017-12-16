@@ -12,7 +12,7 @@ export class CreateStockComponent {
   public confirmed = false;
   public exchanges = ['NYSE', 'NASDAQ', 'OTHER'];
   constructor() {
-    this.stock =  new Stock('test', '', 0, 0, 'NASDAQ');
+    this.stock =  new Stock('', '', 0, 0, 'NASDAQ');
   }
 
   setStockPrice(price) {
