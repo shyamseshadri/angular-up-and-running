@@ -1,0 +1,41 @@
+<h2>Create Stock Form</h2>
+
+<div class="form-group">
+  <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm" >
+    <div ngModelGroup="stock">
+      <div class="stock-name">
+        <input type="text"
+              placeholder="Stock Name"
+              required
+              name="name"
+              ngModel>
+      </div>
+      <div class="stock-code">
+        <input type="text"
+              placeholder="Stock Code"
+              required
+              minlength="2"
+              name="code"
+              ngModel>
+      </div>
+      <div class="stock-price">
+        <input type="number"
+              placeholder="Stock Price"
+              name="price"
+              required
+              ngModel>
+      </div>
+      <div class="stock-exchange">
+        <div>
+          <select name="exchange" ngModel>
+            <option *ngFor="let exchange of exchanges" [ngValue]="exchange">{{exchange}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</div>
+
+<h4>Stock Name is {{stock | json}}</h4>
+<h4>Data has been confirmed: {{confirmed}}</h4>

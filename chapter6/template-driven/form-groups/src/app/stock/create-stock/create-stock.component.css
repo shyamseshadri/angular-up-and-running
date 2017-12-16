@@ -1,0 +1,14 @@
+.stock-name .ng-valid,
+.stock-code .ng-valid,
+.stock-price .ng-valid {
+  background-color: green;
+}
+
+.stock-name .ng-invalid,
+.stock-code .ng-invalid,
+.stock-price .ng-invalid {
+  background-color: pink;
+}
+
+
+
