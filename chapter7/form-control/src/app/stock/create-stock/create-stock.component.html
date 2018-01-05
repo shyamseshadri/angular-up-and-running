@@ -1,0 +1,15 @@
+<h2>Create Stock Form</h2>
+
+<div class="form-group">
+
+    <div class="stock-name">
+      <input type="text"
+             placeholder="Stock Name"
+             name="stockName"
+             [formControl]="name">
+    </div>
+    <button (click)="onSubmit()">Submit</button>
+</div>
+
+<p>Form Control value: {{ name.value | json }}</p>
+<p>Form Control status: {{ name.status | json }}</p>
