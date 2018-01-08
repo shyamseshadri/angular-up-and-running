@@ -1,0 +1,58 @@
+<h3>
+  Create Product
+</h3>
+
+<div>
+  <h4 class="error">{{message}}</h4>
+  <form (ngSubmit)="createProduct(productForm)" [formGroup]="productForm">
+    <div>
+      <div>
+          <input type="text"
+                 name="name"
+                 placeholder="Product Name"
+                 formControlName="name"
+                 required/>
+      </div>
+      <div class="error" *ngIf="(productForm.get('name').dirty  || message) && productForm.get('name').invalid">
+        <!-- Cheating, since there is only one way the product name field could be invalid -->
+        Product name is required
+      </div>
+      <div>
+        <input type="number"
+               name="price"
+               placeholder="Product Price"
+               formControlName="price">
+      </div>
+      <div class="error" *ngIf="(productForm.get('price').dirty || message) && productForm.get('price').invalid">
+        <div *ngIf="productForm.get('price').errors.required">
+          Product price is required
+        </div>
+        <div *ngIf="productForm.get('price').errors.min">
+          Product price must be atleast 1
+        </div>
+      </div>
+      <div>
+        <input type="text"
+                name="imageUrl"
+                placeholder="Product Image URL"
+                formControlName="imageUrl">
+      </div>
+      <div class="error"
+           *ngIf="(productForm.get('imageUrl').dirty || message) &&
+                  productForm.get('imageUrl').invalid">
+        <div *ngIf="productForm.get('imageUrl').errors.required">
+          Product Image URL is required
+        </div>
+        <div *ngIf="productForm.get('imageUrl').errors.pattern">
+          Product Image URL does not seem to be a valid URL
+        </div>
+      </div>
+      <div>
+        <input type="checkbox"
+               formControlName="isOnSale"
+               name="isOnSale">On Sale
+      </div>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+</div>
