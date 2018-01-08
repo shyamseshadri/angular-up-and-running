@@ -26,11 +26,11 @@ export class CreateProductComponent {
     });
   }
 
-  createProduct(productForm) {
-    if (productForm.invalid) {
+  createProduct() {
+    if (this.productForm.invalid) {
       this.message = 'Please correct all errors and resubmit the form';
     } else {
-      const product: Product = productForm.value.product;
+      const product: Product = this.productForm.value;
       console.log('Creating product', product);
     }
   }
