@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder} from '@angular/forms';
+import { FormArray } from '@angular/forms';
 import { Stock } from 'app/model/stock';
-import { FormArray } from '@angular/forms/src/model';
-
-let counter = 1;
 
 @Component({
   selector: 'app-create-stock',
@@ -16,7 +15,6 @@ export class CreateStockComponent {
   public stockForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.createForm();
-    this.stock = new Stock('Test ' + counter++, 'TST', 20, 10);
   }
 
   createForm() {

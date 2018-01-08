@@ -12,14 +12,6 @@ export class Stock {
   isPositiveChange(): boolean {
     return this.price >= this.previousPrice;
   }
-
-  addNotablePerson(p: Person) {
-    this.notablePeople.push(p);
-  }
-
-  removeNotablePerson(index: number) {
-    this.notablePeople.splice(index, 1);
-  }
 }
 
 export class Person {

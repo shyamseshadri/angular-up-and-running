@@ -69,16 +69,9 @@
             (click)="resetForm()">
       Reset
     </button>
-    <button type="button"
-            (click)="loadStockFromServer()">
-      Simulate Stock Load from Server
-    </button>
-    <button type="button"
-            (click)="patchStockForm()">
-      Patch Stock Form
-    </button>
   </form>
 </div>
 
 <p>Form Control value: {{ stockForm.value | json }}</p>
 <p>Form Control status: {{ stockForm.status | json }}</p>
+<p>Stock Value: {{stock | json}}</p>
