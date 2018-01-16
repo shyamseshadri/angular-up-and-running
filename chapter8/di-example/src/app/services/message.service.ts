@@ -3,15 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MessageService {
 
-  message: string;
+  public message: string = null;
+
   constructor() { }
-
-  setMessage(msg) {
-    this.message = msg;
-  }
-
-  getMessage() {
-    return this.message;
-  }
-
 }
