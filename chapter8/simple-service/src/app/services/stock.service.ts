@@ -18,11 +18,18 @@ export class StockService {
   }
 
   createStock(stock: Stock) {
-    this.stocks.push(stock);
+    let foundStock = this.stocks.find(each => each.code === stock.code);
+    if (foundStock) {
+      return false;
+    }
+    let stockClone = new Stock('', '', 0, 0, '');
+    stockClone = Object.assign(stockClone, stock);
+    this.stocks.push(stockClone);
+    return true;
   }
 
   toggleFavorite(stock: Stock) {
-    stock.favorite = !stock.favorite;
+    let foundStock = this.stocks.find(each => each.code === stock.code);
+    foundStock.favorite = !foundStock.favorite;
   }
-
 }

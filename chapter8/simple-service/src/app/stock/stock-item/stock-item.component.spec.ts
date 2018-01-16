@@ -19,7 +19,7 @@ describe('Stock Item Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(StockItemComponent);
     component = fixture.componentInstance;
-    component.stock = new Stock('Testing Stock', 'TS', 100, 200);
+    component.stock = new Stock('Testing Stock', 'TS', 100, 200, 'NYSE');
     fixture.detectChanges();
   });
 

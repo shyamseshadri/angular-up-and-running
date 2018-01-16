@@ -22,7 +22,7 @@ import { StockService } from 'app/services/stock.service';
     HttpModule
   ],
   providers: [
-    StockService
+    StockService,
   ],
   bootstrap: [AppComponent]
 })
