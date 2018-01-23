@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
 
 import { Stock } from 'app/model/stock';
 
@@ -22,6 +19,9 @@ export class StockService {
   }
 
   toggleFavorite(stock: Stock): Observable<Stock> {
-    return this.http.patch<Stock>('/api/stock/' + stock.code, {favorite: !stock.favorite});
+    return this.http.patch<Stock>('/api/stock/' + stock.code,
+      {
+        favorite: !stock.favorite
+      });
   }
 }
