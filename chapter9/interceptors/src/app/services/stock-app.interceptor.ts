@@ -12,6 +12,23 @@ export class StockAppInterceptor implements HttpInterceptor {
 
   constructor(private authService: AuthService) {}
 
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (this.authService.authToken) {
+      const authReq = req.clone({
+        headers: req.headers.set(
+          'Authorization',
+          this.authService.authToken
+        )
+      });
+      console.log('Making an authorized request');
+      req = authReq;
+    }
+    return next.handle(req)
+        .do(event => this.handleResponse(req, event),
+            error => this.handleError(req, error));
+  }
+
+
   handleResponse(req: HttpRequest<any>, event) {
     console.log('Handling response for ', req.url, event);
     if (event instanceof HttpResponse) {
@@ -25,18 +42,5 @@ export class StockAppInterceptor implements HttpInterceptor {
     console.error('Request for ', req.url,
           ' Response Status ', event.status,
           ' With error ', event.error);
-  }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.authService.authToken) {
-      const authReq = req.clone({headers: req.headers.set('Authorization', this.authService.authToken)});
-      console.log('Making an authorized request');
-      return next.handle(authReq)
-          .do(event => this.handleResponse(req, event),
-              error => this.handleError(req, error));
-    }
-    return next.handle(req)
-        .do(event => this.handleResponse(req, event),
-            error => this.handleError(req, error));
   }
 }

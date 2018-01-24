@@ -32,8 +32,8 @@ export class StockListComponent implements OnInit {
   }
 
   makeFailingCall() {
-    this.stockService.makeFailingCall()
-        .subscribe((res) => console.log('Successfully made failing call', res),
-                   (err) => console.error('Error making failing call', err));
+    this.stockService.makeFailingCall().subscribe(
+      (res) => console.log('Successfully made failing call', res),
+      (err) => console.error('Error making failing call', err));
   }
 }
