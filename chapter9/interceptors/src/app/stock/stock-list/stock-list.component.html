@@ -1,0 +1,10 @@
+<app-stock-item *ngFor="let stock of stocks$ | async"
+                [stock]="stock">
+</app-stock-item>
+
+<div>
+  <button type="button" (click)="fetchStocks()">Refetch Stocks</button>
+  <button type="button" (click)="makeFailingCall()">Make Failing Call</button>
+  <button type="button" (click)="setAuthToken()">Set Auth Token</button>
+  <button type="button" (click)="resetAuthToken()">Reset Auth Token</button>
+</div>
