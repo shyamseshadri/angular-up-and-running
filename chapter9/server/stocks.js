@@ -8,9 +8,10 @@ const stocks = [
 ];
 
 router.get('/', (req, res) => {
-  var query = req.query['q'];
+  var query = (req.query['q'] || '').toLowerCase();
   if (query) {
-    const foundStocks = stocks.filter((stock) => stock.name.indexOf(query) != -1);
+    const foundStocks = stocks.filter(
+      (stock) => stock.name.toLowerCase().indexOf(query) != -1);
     return res.status(200).json(foundStocks);
   }
   return res.status(200).json(stocks);
