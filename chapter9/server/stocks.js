@@ -8,7 +8,12 @@ const stocks = [
 ];
 
 router.get('/', (req, res) => {
-  res.status(200).json(stocks);
+  var query = req.query['q'];
+  if (query) {
+    const foundStocks = stocks.filter((stock) => stock.name.indexOf(query) != -1);
+    return res.status(200).json(foundStocks);
+  }
+  return res.status(200).json(stocks);
 });
 
 router.post('/', (req, res) => {
