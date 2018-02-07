@@ -1,6 +1,6 @@
 <h2>Create Stock Form</h2>
 
-<div *ngIf="message">{{message}}</div>
+<div class="message" *ngIf="message">{{message}}</div>
 <div class="form-group">
   <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm">
     <div class="stock-name">

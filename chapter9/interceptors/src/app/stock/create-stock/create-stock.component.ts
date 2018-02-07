@@ -40,7 +40,7 @@ export class CreateStockComponent {
             this.message = result.msg;
             this.initializeStock();
           }, (err) => {
-            this.message = err.msg;
+            this.message = err.error.msg;
           });
     } else {
       console.error('Stock form is in an invalid state');
