@@ -1,0 +1,24 @@
+<div class="form-group">
+  <form (ngSubmit)="login()">
+    <div class="user-name">
+      <input type="text"
+             placeholder="Username"
+             required
+             name="username"
+             #usernameField="ngModel"
+             [(ngModel)]="username">
+      <div *ngIf="usernameField.errors && usernameField.errors.required">Username is Mandatory</div>
+    </div>
+    <div class="password">
+      <input type="password"
+             placeholder="Password"
+             required
+             name="password"
+             #passwordField="ngModel"
+             [(ngModel)]="password">
+      <div *ngIf="passwordField.errors && passwordField.errors.required">Password is Mandatory</div>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+</div>

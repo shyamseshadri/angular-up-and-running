@@ -1,0 +1,9 @@
+
+.stock-name .ng-invalid,
+.stock-code .ng-invalid,
+.stock-price .ng-invalid {
+  background-color: pink;
+}
+
+
+
