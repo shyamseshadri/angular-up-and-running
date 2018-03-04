@@ -11,8 +11,7 @@ import { Stock } from '../../model/stock';
 export class StockDetailsComponent implements OnInit {
 
   public stock: Stock;
-  constructor(private stockService: StockService,
-              private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe((data: {stock: Stock}) => {

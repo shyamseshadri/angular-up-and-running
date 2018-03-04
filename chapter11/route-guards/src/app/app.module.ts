@@ -15,7 +15,7 @@ import { UserService } from './services/user.service';
 import { UserStoreService } from './services/user-store.service';
 import { StockAppInterceptor } from './services/stock-app.interceptor';
 import { AppRoutesModule } from './app-routes.module';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { CreateStockDeactivateGuardService } from './services/create-stock-deactivate-guard.service';
 import { StockLoadResolverService } from './services/stock-load-resolver.service';
 
@@ -39,7 +39,7 @@ import { StockLoadResolverService } from './services/stock-load-resolver.service
     StockService,
     UserService,
     UserStoreService,
-    AuthGuard,
+    AuthGuardService,
     CreateStockDeactivateGuardService,
     StockLoadResolverService,
     {
