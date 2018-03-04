@@ -17,7 +17,15 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/register', (req, res) => {
-
+  var user = req.body;
+  if (users[user.username]) {
+    res.status(400).json({msg: 'User already exists, please login.'});
+  } else {
+    users[user.username] = user.password;
+    res.json({
+      msg: 'Successfully created user, please login'
+    });
+  }
 });
 
 module.exports = router;

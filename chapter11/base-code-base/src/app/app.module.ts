@@ -13,6 +13,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { UserService } from './services/user.service';
 import { UserStoreService } from './services/user-store.service';
 import { StockAppInterceptor } from './services/stock-app.interceptor';
+import { StockDetailsComponent } from './stock/stock-details/stock-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { StockAppInterceptor } from './services/stock-app.interceptor';
     StockItemComponent,
     CreateStockComponent,
     StockListComponent,
+    StockDetailsComponent,
     LoginComponent,
     RegisterComponent
   ],

@@ -17,6 +17,15 @@ router.get('/', (req, res) => {
   return res.status(200).json(stocks);
 });
 
+router.get('/:code', (req, res) => {
+  let stockCode = req.params.code;
+  let foundStock = stocks.find(each => each.code === stockCode);
+  if (foundStock) {
+    return res.status(200).json(foundStock);
+  }
+  return res.status(400).json({msg: 'Stock with code ' + stockCode + ' not found!'});
+});
+
 router.post('/', (req, res) => {
   let stock = req.body;
   let foundStock = stocks.find(each => each.code === stock.code);

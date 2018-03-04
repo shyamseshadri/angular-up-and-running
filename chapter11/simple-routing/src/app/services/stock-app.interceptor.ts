@@ -14,7 +14,7 @@ export class StockAppInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log('INTERCEPTING');
     if (this.userStore.token) {
-      console.log('INTERCEPTING, HAS TOKEN');
+      console.log('INTERCEPTING, HAS TOKEN', this.userStore.token);
       const authReq = req.clone({
         headers: req.headers.set(
           'X-AUTH-HEADER',

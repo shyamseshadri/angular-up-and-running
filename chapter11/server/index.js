@@ -12,7 +12,8 @@ app.use('/api/stock', function(req, res, next) {
   var token = req.get('X-AUTH-HEADER');
   console.log('GOT TOKEN : ', token);
   var user = jwt.decode(token);
-  if (user && user.username) {
+  console.log('DECODED USER : ', user);
+  if (user && user.user) {
     return next();
   }
   return res.status(403).json({msg: 'Please login to access this information'});

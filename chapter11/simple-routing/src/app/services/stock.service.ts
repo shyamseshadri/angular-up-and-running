@@ -13,11 +13,11 @@ export class StockService {
   constructor(private http: HttpClient, private userStore: UserStoreService) {}
 
   getStocks() : Observable<Stock[]> {
-    return this.http.get<Stock[]>('/api/stock', {
-      headers: {
-        "X-AUTH-HEADER": this.userStore.token || 'TEST'
-      }
-    });
+    return this.http.get<Stock[]>('/api/stock');
+  }
+
+  getStock(code: string): Observable<Stock> {
+    return this.http.get<Stock>('/api/stock/' + code);
   }
 
   createStock(stock: Stock): Observable<any> {
