@@ -1,0 +1,10 @@
+<div class="product-item" [class.sale]="product.isOnSale">
+  <div class="image"><img [src]="product.imageUrl"></div>
+  <div class="details">
+    <div class="name">{{product.name}}</div>
+    <div class="price">$ {{product.price}}</div>
+    <div>
+      {{product.description}}
+    </div>
+  </div>
+</div>

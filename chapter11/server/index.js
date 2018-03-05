@@ -10,9 +10,7 @@ app.get('/api/fail', (req, res) => res.status(403).json({msg: 'You are not allow
 
 app.use('/api/stock', function(req, res, next) {
   var token = req.get('X-AUTH-HEADER');
-  console.log('GOT TOKEN : ', token);
   var user = jwt.decode(token);
-  console.log('DECODED USER : ', user);
   if (user && user.user) {
     return next();
   }
