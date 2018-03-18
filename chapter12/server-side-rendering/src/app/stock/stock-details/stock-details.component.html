@@ -1,0 +1,7 @@
+<div class="stock-container">
+  <div class="name">{{stock.name + ' (' + stock.code + ')'}}</div>
+  <div class="exchange">{{stock.exchange}}</div>
+  <div class="price"
+      [class.positive]="stock.price > stock.previousPrice"
+      [class.negative]="stock.price <= stock.previousPrice">$ {{stock.price}}</div>
+</div>
