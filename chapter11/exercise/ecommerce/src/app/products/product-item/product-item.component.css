@@ -1,0 +1,14 @@
+.product-item {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.product-item .details {
+  text-align: center;
+}
+
+.product-item.sale {
+  background-color: lightseagreen;
+}
