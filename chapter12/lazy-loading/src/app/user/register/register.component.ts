@@ -21,7 +21,7 @@ export class RegisterComponent {
       .subscribe((resp) => {
         console.log('Successfully registered');
         this.message = resp.msg;
-        this.router.navigate(['login']);
+        this.router.navigate(['user', 'login']);
       }, (err) => {
         console.error('Error registering', err);
         this.message = err.error.msg;
