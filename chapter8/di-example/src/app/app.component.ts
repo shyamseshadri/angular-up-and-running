@@ -7,7 +7,7 @@ import { MessageService } from 'app/services/message.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  title = 'Stock Market App';
 
   constructor(public messageService: MessageService) {}
 

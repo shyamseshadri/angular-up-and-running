@@ -12,7 +12,7 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy,
                                      DoCheck, AfterContentChecked,
                                      AfterContentInit, AfterViewChecked,
                                      AfterViewInit {
-  title = 'app works!';
+  title = 'Stock Market App';
 
   public stock: Stock;
 

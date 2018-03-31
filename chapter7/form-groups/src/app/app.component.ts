@@ -7,7 +7,7 @@ import { Stock } from 'app/model/stock';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
+  title = 'Stock Market App';
 
   public stock: Stock;
 
