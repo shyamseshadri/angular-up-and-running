@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
 
-  describe('Isolated Unit Test', () => {
+  describe('Simple, No Angular Unit Test', () => {
     it('should have stock instantiated on ngInit', () => {
       const appComponent = new AppComponent();
       expect(appComponent.stock).toBeUndefined();
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     });
   });
 
-  describe('Angular test', () => {
+  describe('Angular-Aware test', () => {
 
     let fixture, component;
 
@@ -49,7 +49,7 @@ describe('AppComponent', () => {
     it('should load stock with default values', () => {
       const titleEl = fixture.debugElement.query(By.css('h1'));
       // Trim to avoid HTML whitespaces
-      expect(titleEl.nativeElement.textContent.trim()).toEqual('app works!');
+      expect(titleEl.nativeElement.textContent.trim()).toEqual('Stock Market App');
 
       // Check for default stock values in template
       const nameEl = fixture.debugElement.query(By.css('.name'));
