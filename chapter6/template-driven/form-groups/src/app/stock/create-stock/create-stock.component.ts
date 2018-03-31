@@ -15,11 +15,6 @@ export class CreateStockComponent {
     this.stock =  new Stock('', '', 0, 0, 'NASDAQ');
   }
 
-  setStockPrice(price) {
-    this.stock.price = price;
-    this.stock.previousPrice = price;
-  }
-
   createStock(stockForm) {
     console.log('Stock form', stockForm.value);
     if (stockForm.valid) {
