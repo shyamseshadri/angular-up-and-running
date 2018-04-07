@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { StockItemComponent } from './stock/stock-item/stock-item.component';
@@ -19,7 +18,6 @@ import { StockService } from 'app/services/stock.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
   ],
   providers: [
     StockService,

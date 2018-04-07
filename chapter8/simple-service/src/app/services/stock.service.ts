@@ -22,9 +22,7 @@ export class StockService {
     if (foundStock) {
       return false;
     }
-    let stockClone = new Stock('', '', 0, 0, '');
-    stockClone = Object.assign(stockClone, stock);
-    this.stocks.push(stockClone);
+    this.stocks.push(stock);
     return true;
   }
 
