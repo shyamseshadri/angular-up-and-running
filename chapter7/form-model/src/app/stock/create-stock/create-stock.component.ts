@@ -35,7 +35,7 @@ export class CreateStockComponent {
   }
 
   patchStockForm() {
-    this.stock = new Stock('Test ' + counter++, 'TST', 20, 10);
+    this.stock = new Stock(`Test ${counter++}`, 'TST', 20, 10);
     this.stockForm.patchValue(this.stock);
   }
 

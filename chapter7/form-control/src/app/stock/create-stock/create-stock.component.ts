@@ -8,10 +8,10 @@ import { FormControl } from '@angular/forms';
 })
 export class CreateStockComponent {
 
-  public name = new FormControl();
+  public nameControl = new FormControl();
   constructor() {}
 
   onSubmit() {
-    console.log('Name Control Value', this.name.value);
+    console.log('Name Control Value', this.nameControl.value);
   }
 }
