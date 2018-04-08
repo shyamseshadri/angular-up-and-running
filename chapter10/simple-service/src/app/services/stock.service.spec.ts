@@ -22,6 +22,7 @@ describe('StockService', () => {
         850, 800, 'NASDAQ');
     expect(stockService.createStock(stock)).toBeTruthy();
     expect(stockService.getStocks().length).toEqual(4);
+    expect(stockService.getStocks()[3].code).toEqual('TTT')
   });
 
   it('should fetch a list of stocks', () => {
