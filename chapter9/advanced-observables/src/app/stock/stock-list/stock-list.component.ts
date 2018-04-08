@@ -4,11 +4,9 @@ import { Stock } from 'app/model/stock';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/share';
+import { debounceTime, switchMap,
+         distinctUntilChanged, startWith,
+         share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-stock-list',
@@ -25,12 +23,13 @@ export class StockListComponent implements OnInit {
 
   ngOnInit() {
     // this.stocks$ = this.stockService.getStocks(this.searchString);
-    this.stocks$ = this.searchTerms
-      .startWith(this.searchString)
-      .debounceTime(500)
-      .distinctUntilChanged()
-      .switchMap((query) => this.stockService.getStocks(query))
-      .share();
+    this.stocks$ = this.searchTerms.pipe(
+      startWith(this.searchString),
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap((query) => this.stockService.getStocks(query)),
+      share()
+    );
   }
 
   search() {

@@ -6,9 +6,9 @@
 </div>
 
 <h2>
-  We have found {{(stocks$ | async)?.length}} stocks!
+  We have found {{(stocks)?.length}} stocks!
 </h2>
 
-<app-stock-item *ngFor="let stock of stocks$ | async"
+<app-stock-item *ngFor="let stock of stocks$ | async as stocks"
                 [stock]="stock">
 </app-stock-item>
