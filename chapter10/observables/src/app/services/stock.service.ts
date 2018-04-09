@@ -27,9 +27,7 @@ export class StockService {
     if (foundStock) {
       return Observable.throw({msg: 'Stock with code ' + stock.code + ' already exists'});
     }
-    let stockClone = new Stock('', '', 0, 0, '');
-    stockClone = Object.assign(stockClone, stock);
-    this.stocks.push(stockClone);
+    this.stocks.push(stock);
     return Observable.of({msg: 'Stock with code ' + stock.code + ' successfully created'});;
   }
 
