@@ -15,9 +15,9 @@ import { UserService } from './services/user.service';
 import { UserStoreService } from './services/user-store.service';
 import { StockAppInterceptor } from './services/stock-app.interceptor';
 import { AppRoutesModule } from './app-routes.module';
-import { AuthGuardService } from './services/auth-guard.service';
-import { CreateStockDeactivateGuardService } from './services/create-stock-deactivate-guard.service';
-import { StockLoadResolverService } from './services/stock-load-resolver.service';
+import { CreateStockDeactivateGuard } from './guards/create-stock-deactivate.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { StockLoadResolverService } from './resolver/stock-load-resolver.service';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,8 @@ import { StockLoadResolverService } from './services/stock-load-resolver.service
     StockService,
     UserService,
     UserStoreService,
-    AuthGuardService,
-    CreateStockDeactivateGuardService,
+    AuthGuard,
+    CreateStockDeactivateGuard,
     StockLoadResolverService,
     {
       provide: HTTP_INTERCEPTORS,

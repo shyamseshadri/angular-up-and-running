@@ -6,20 +6,22 @@ import { StockListComponent } from './stock/stock-list/stock-list.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { StockDetailsComponent } from './stock/stock-details/stock-details.component';
-import { AuthGuardService } from './services/auth-guard.service';
-import { CreateStockDeactivateGuardService } from './services/create-stock-deactivate-guard.service';
-import { StockLoadResolverService } from './services/stock-load-resolver.service';
+import { AuthGuard } from './guards/auth.guard';
+import { CreateStockDeactivateGuard } from './guards/create-stock-deactivate.guard';
+import { StockLoadResolverService } from './resolver/stock-load-resolver.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'stocks/list', component: StockListComponent,
-    canActivate: [AuthGuardService] },
+    canActivate: [AuthGuard] },
   { path: 'stocks/create', component: CreateStockComponent,
-    canActivate: [AuthGuardService], canDeactivate: [CreateStockDeactivateGuardService] },
+    canActivate: [AuthGuard],
+    canDeactivate: [CreateStockDeactivateGuard]  },
   { path: 'stock/:code', component: StockDetailsComponent,
-    canActivate: [AuthGuardService], resolve: { stock: StockLoadResolverService } },
+    canActivate: [AuthGuard],
+    resolve: { stock: StockLoadResolverService }  },
   { path: '**', redirectTo: '/register' }
 ];
 

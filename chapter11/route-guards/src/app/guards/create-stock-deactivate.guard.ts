@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot }
-    from '@angular/router';
-import { CreateStockComponent } from '../stock/create-stock/create-stock.component';
+import { ActivatedRouteSnapshot, RouterStateSnapshot,
+         CanDeactivate } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { CreateStockComponent } from '../stock/create-stock/create-stock.component';
 
 @Injectable()
-export class CreateStockDeactivateGuardService
+export class CreateStockDeactivateGuard
     implements CanDeactivate<CreateStockComponent> {
-
-  constructor() { }
-
   canDeactivate(component: CreateStockComponent,
                 currentRoute: ActivatedRouteSnapshot,
                 currentState: RouterStateSnapshot,
-                nextState?: RouterStateSnapshot):
-                   boolean | Observable<boolean> | Promise<boolean> {
+                nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
     return window.confirm('Do you want to navigate away from this page?');
   }
-
 }

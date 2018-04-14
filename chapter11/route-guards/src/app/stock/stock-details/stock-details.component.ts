@@ -18,5 +18,4 @@ export class StockDetailsComponent implements OnInit {
       this.stock = data.stock;
     });
   }
-
 }
