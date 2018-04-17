@@ -18,7 +18,7 @@ import { AppRoutesModule } from './app-routes.module';
 import { AuthGuardService } from './services/auth-guard.service';
 import { CreateStockDeactivateGuardService } from './services/create-stock-deactivate-guard.service';
 import { StockLoadResolverService } from './services/stock-load-resolver.service';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,9 @@ import { isPlatformBrowser } from '@angular/common';
       provide: HTTP_INTERCEPTORS,
       useClass: StockAppInterceptor,
       multi: true,
-    }
+    },
+    {provide: APP_BASE_HREF, useValue: ''}
+
   ],
   bootstrap: [AppComponent]
 })

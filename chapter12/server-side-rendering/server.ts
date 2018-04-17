@@ -7,6 +7,9 @@ import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import { join } from 'path';
 
+import * as proxy from 'http-proxy-middleware';
+
+
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
@@ -34,10 +37,7 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-// TODO: implement data requests securely
-app.get('/api/*', (req, res) => {
-  res.status(404).send('data requests are not supported');
-});
+app.use('/api', proxy({target: 'http://localhost:3000', changeOrigin: true}));
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));

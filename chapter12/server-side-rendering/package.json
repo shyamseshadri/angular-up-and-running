@@ -29,6 +29,7 @@
     "@nguniversal/express-engine": "^5.0.0-beta.6",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.6",
     "core-js": "^2.4.1",
+    "http-proxy-middleware": "^0.18.0",
     "rxjs": "^5.1.0",
     "ts-loader": "^3.5.0",
     "zone.js": "^0.8.4"

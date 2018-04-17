@@ -13,6 +13,7 @@ export class UserService {
   constructor(private http: HttpClient,
               private userStore: UserStoreService,
               @Optional() @Inject(APP_BASE_HREF) origin: string) {
+    console.log('APP BASE HREF', origin);
     this.baseUrl = `${origin}/api/user/`;
   }
 
